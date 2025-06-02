@@ -9,8 +9,23 @@
 """
 
 
-class Fraction:
-    pass
+# class Fraction:
+
+    def __init__(self, numerator, denominator):
+        self.numerator = numerator
+        self.denominator = denominator
+
+    def __repr__(self):
+        return f'{self.__class__.__name__}({self.numerator}, {self.denominator})'
+
+    def __str__(self):
+        return f'{self.numerator}/{self.denominator}'
+
+    def __add__(self, other):
+        nn = (self.numerator * other.denominator) + (self.denominator * other.numerator)
+        nd = self.denominator * other.denominator
+
+        return f'{nn}/{nd}'
 
 
 # код для проверки 
@@ -19,5 +34,7 @@ print(repr(fraction1))  # Fraction(1, 2)
 print(str(fraction1))  # 1/2
 
 fraction2 = Fraction(3, 4)
-fraction3 = fraction1 + fraction2
+
+
+fraction3 = fraction1 + fraction2  # 1/2 + 3/4
 print(fraction3)  # 5/4

@@ -8,7 +8,7 @@
 
 
 class Logger:
-    pass
+    def __init__(self):
 
 
 # код для проверки 
